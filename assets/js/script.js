@@ -27,7 +27,7 @@ var createCard = function (breweries) {
         breweryCard.appendChild(breweryName);
         breweryCard.appendChild(breweryAddress);
         //Some breweries have no address data, so we check for it before appending anything
-        if (!breweries[i].street) {
+        if (breweries[i].street) {
             breweryContainer.appendChild(breweryCard);
         }
     }
