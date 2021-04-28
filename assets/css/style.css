@@ -12,3 +12,40 @@
     width: 15%;
     font-size: 16px;
 }
+
+:root {
+    --primary-color: rgb(128, 66, 50);
+    --secondary-color: #87e0e0;
+    --tertiary-color: #cbd4d4;
+    --quaternary-color: #353d3d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--tertiary-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.hero {
+    height: 500px;
+    width: 100%;
+    background-image: url("./Images/brewery.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.hero h1 {
+    color: var(--primary-color);
+    padding: 15px;
+    font-size: 120px;
+    position: relative;
+    top: 350px;
+}
