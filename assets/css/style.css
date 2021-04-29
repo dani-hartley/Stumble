@@ -35,6 +35,8 @@ body {
     top: 350px;
 }
 
+/*Brewery cards search results*/
+
 #breweries {
     display: flex;
     flex-direction: row;
@@ -48,4 +50,12 @@ body {
     background-color: rgb(45, 50, 72);
     width: 15%;
     font-size: 16px;
+}
+
+.brewery-name {
+    font-size: 20px;
+}
+
+a:hover {
+    color:rgb(128, 66, 50);
 }
