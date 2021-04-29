@@ -1,0 +1,95 @@
+:root {
+    --primary-color: rgb(128, 66, 50);
+    --secondary-color: #87e0e0;
+    --tertiary-color: #cbd4d4;
+    --quaternary-color: #353d3d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--tertiary-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.hero {
+    height: 500px;
+    width: 100%;
+    background-image: url("./Images/brewery.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.hero h1 {
+    color: var(--primary-color);
+    padding: 15px;
+    font-size: 120px;
+    position: relative;
+    top: 350px;
+
+}
+/* Form box */
+#address-form {
+    display: block;
+    align-items: right;
+    justify-content: right;
+    border: 3px solid black;
+    padding: 40px;
+    background-color: whitesmoke;
+    margin: 340px 270px;
+}
+input[type=text], #distance, #submitbtn {
+    font-size: 20px;
+}
+
+#submitbtn {
+    background-color:rgb(128, 66, 50);
+    border: none;
+    color: white;
+    padding: 1px 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+/*Brewery cards search results*/
+
+#breweries {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.brewery-card {
+    color: whitesmoke;
+    background-color: rgb(45, 50, 72);
+    width: 15%;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 2px solid black;
+    margin-top: 20px;
+    width: 15%;
+}
+
+.brewery-name {
+    font-size: 20px;
+}
+
+a:hover {
+    color:rgb(128, 66, 50);
+}
+
+.flex-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
