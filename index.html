@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stumble</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-</head>
-
-<body>
-    <!--hero/jumbotron -->
-    <section class="hero">
-        <h1>Stumble</h1>
-        <div>
-            <input type="text" id="address" name="address" placeholder="Enter Address" />
-            <button type="submit" id="submitbtn">Submit</button>
-            <select id="distance">
-                <option value="25miles">25 Miles</option>
-                <option value="35miles">35 Miles</option>
-                <option value="45miles">45 Miles</option>
-                <option value="55miles">55 Miles</option>
-            </select>
-        </div>
-    </section>
-    <!--Containers for Return values-->
-    <div id="breweries"></div>
-</body>
-
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Stumble</title>
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
+    <body>
+        <!--hero/jumbotron -->
+        <section class="hero">
+            <h1>Stumble</h1>
+            <form id="address-form">
+                <input type="text" id="address" name="address" placeholder="Enter Address" />
+                <button type="submit" id="submitbtn">Submit</button>
+                <select id="distance">
+                    <option value="25miles">25 Miles</option>
+                    <option value="35miles">35 Miles</option>
+                    <option value="45miles">45 Miles</option>
+                    <option value="55miles">55 Miles</option>
+                </select>
+            </form>
+            <!--Containers for Return values-->
+        </section>
+        <div id="breweries"></div>
+        <script src="./assets/js/script.js"></script>
+    </body>
 </html>
