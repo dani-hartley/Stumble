@@ -50,6 +50,9 @@ body {
     background-color: rgb(45, 50, 72);
     width: 15%;
     font-size: 16px;
+    border-radius: 20px;
+    border: 2px solid black;
+    margin-top: 20px;
 }
 
 .brewery-name {
@@ -59,3 +62,4 @@ body {
 a:hover {
     color:rgb(128, 66, 50);
 }
+
