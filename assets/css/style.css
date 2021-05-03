@@ -58,14 +58,7 @@ input[type=text], #distance, #submitbtn {
     display: inline-block;
 }
 
-#address-form {
-    border: var(--quaternary-color) solid 3px;
-    padding: 20px;
-    position: relative;
-    top: 250px;
-    left: 150px;
-
-}
+/*Brewery cards search results*/
 
 #breweries {
     display: flex;
