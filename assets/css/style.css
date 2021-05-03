@@ -35,6 +35,15 @@ body {
     top: 350px;
 }
 
+#address-form {
+    border: var(--quaternary-color) solid 3px;
+    padding: 20px;
+    position: relative;
+    top: 250px;
+    left: 150px;
+
+}
+
 #breweries {
     display: flex;
     flex-direction: row;
