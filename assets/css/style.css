@@ -33,6 +33,29 @@ body {
     font-size: 120px;
     position: relative;
     top: 350px;
+
+}
+/* Form box */
+#address-form {
+    display: block;
+    align-items: right;
+    justify-content: right;
+    border: 3px solid black;
+    padding: 40px;
+    background-color: whitesmoke;
+    margin: 340px 280px;
+}
+input[type=text], #distance, #submitbtn {
+    font-size: 20px;
+}
+
+#submitbtn {
+    background-color:rgb(128, 66, 50);
+    border: none;
+    color: white;
+    padding: 1px 5px;
+    text-align: center;
+    display: inline-block;
 }
 
 /*Brewery cards search results*/
@@ -50,6 +73,10 @@ body {
     background-color: rgb(45, 50, 72);
     width: 15%;
     font-size: 16px;
+    border-radius: 20px;
+    border: 2px solid black;
+    margin-top: 20px;
+    width: 15%;
 }
 
 .brewery-name {
@@ -58,4 +85,11 @@ body {
 
 a:hover {
     color:rgb(128, 66, 50);
+}
+
+.flex-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
