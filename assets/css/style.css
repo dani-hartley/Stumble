@@ -33,11 +33,9 @@ body {
     font-size: 120px;
     position: relative;
     top: 350px;
-
 }
 /*form*/
 #address-form {
-<<<<<<< HEAD
     margin-top: 300px;
 }
 
@@ -48,12 +46,6 @@ body {
 /* Form box */
 /*#address-form {
     display: block;
-=======
-    display: flex;
-    position: relative;
-    bottom: 300px;
-    left: 450px;
->>>>>>> main
     align-items: right;
     justify-content: right;
     padding: 40px;
@@ -117,9 +109,5 @@ a:hover {
     align-items: center;
     justify-content: center;
 
-<<<<<<< HEAD
 }
 */
-=======
-}
->>>>>>> main
