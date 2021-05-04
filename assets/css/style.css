@@ -6,9 +6,12 @@
 }
 
 * {
+    box-sizing: border-box;
+}
+
+html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
@@ -16,32 +19,48 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.hero {
-    height: 520px;
+nav p {
+    margin: 0;
+    margin-left: 20px;
+}
+
+.btn {
+    background-color: darkturquoise;
+}
+
+#hero {
+    height: 450px;
     width: 100%;
     background-image: url("./Images/brewery.jpg");
     background-size: cover;
     background-position: center;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
 }
 
-.hero h1 {
-    color: var(--primary-color);
-    padding: 15px;
-    font-size: 120px;
-    position: relative;
-    top: 350px;
-}
 /*form*/
-#address-form {
-    margin-top: 300px;
+
+#search-form {
+    width: 50%;
+}
+
+#submitbtn {
+    margin: 5px 45px;
+}
+
+.brewery-card .card {
+    height: 250px;
+}
+
+.brewery-card .card-content {
+    padding: 0;
+    margin: 10px;
+}
+/* #address-form {
+    align-self: center;
 }
 
 ::placeholder {
     color: red;
-}
+} */
 
 /* Form box */
 /*#address-form {

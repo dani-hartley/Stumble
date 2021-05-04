@@ -1,6 +1,4 @@
 var formEl = document.querySelector("#address-form");
-var inputEl = document.querySelector("#address");
-var selectEl = document.querySelector("#distance");
 var breweryContainer = document.querySelector("#breweries");
 
 var fetchZipData = function (zip, distance) {
@@ -21,7 +19,7 @@ var fetchZipData = function (zip, distance) {
 };
 
 var fetchApiData = function (zip) {
-    var apiUrl = "https://api.openbrewerydb.org/breweries?by_postal=" + zip;
+    var apiUrl = "https://api.openbrewerydb.org/breweries?per_page=3&by_postal=" + zip;
 
     fetch(apiUrl)
         .then((response) => response.json())
@@ -31,21 +29,29 @@ var fetchApiData = function (zip) {
 var formSubmit = function (event) {
     event.preventDefault();
     breweryContainer.textContent = "";
-    fetchZipData(document.querySelector("#address").value, document.querySelector("#distance").value);
+    fetchZipData(document.querySelector("#search").value, document.querySelector("#distance").value);
 };
 
 var createCard = function (breweries) {
     for (var i = 0; i < breweries.length; i++) {
         var breweryCard = document.createElement("div");
-        breweryCard.className = "brewery-card";
-        var breweryName = document.createElement("h3");
+        breweryCard.classList = "brewery-card card hoverable center-align col s12 m4 l2";
+        var breweryName = document.createElement("span");
+        breweryName.classList = "card-title";
         breweryName.textContent = breweries[i].name;
+        var favButton = document.createElement("a");
+        favButton.classList = "btn-floating halfway-fab waves-effect waves-light red";
+        favButton.innerHTML = '<i class="material-icons">star_border</i>';
+
         var breweryAddress = document.createElement("p");
+        breweryAddress.classList = "card-content";
         breweryAddress.textContent = breweries[i].street;
         var breweryType = document.createElement("p");
+        breweryType.classList = "card-content";
         breweryType.textContent = breweries[i].brewery_type;
 
         breweryCard.appendChild(breweryName);
+        breweryCard.appendChild(favButton);
         breweryCard.appendChild(breweryAddress);
         breweryCard.appendChild(breweryType);
 
@@ -62,5 +68,5 @@ formEl.addEventListener("submit", formSubmit);
 
 document.addEventListener("DOMContentLoaded", function () {
     var elems = document.querySelectorAll(".sidenav");
-    var instances = M.Sidenav.init(elems);
+    var instances = M.Sidenav.init(elems, { edge: "right" });
 });
