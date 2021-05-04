@@ -33,7 +33,43 @@ body {
     font-size: 120px;
     position: relative;
     top: 350px;
+
 }
+/* Form box */
+#address-form {
+    display: flex;
+    position: relative;
+    bottom: 300px;
+    left: 450px;
+    align-items: right;
+    justify-content: right;
+    padding: 40px;
+    opacity: 0.75;
+    margin: 340px 280px;
+}
+
+#distance {
+    display: flex;
+    position: relative;
+    top: 120px;
+    right: 220px;
+}
+
+input[type=text], #distance, #submitbtn {
+    font-size: 20px;
+    margin: 5px; 
+}
+
+#submitbtn {
+    background-color:rgb(128, 66, 50);
+    border: none;
+    color: white;
+    padding: 1px 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+/*Brewery cards search results*/
 
 #breweries {
     display: flex;
@@ -48,4 +84,23 @@ body {
     background-color: rgb(45, 50, 72);
     width: 15%;
     font-size: 16px;
+    border-radius: 20px;
+    border: 2px solid black;
+    margin-top: 20px;
+    width: 15%;
+}
+
+.brewery-name {
+    font-size: 20px;
+}
+
+a:hover {
+    color:rgb(128, 66, 50);
+}
+
+.flex-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
