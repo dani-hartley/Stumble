@@ -37,7 +37,7 @@ formEl.addEventListener("submit", formSubmit);
 
 /* Navbar */
 
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
+document.addEventListener("DOMContentLoaded", function () {
+    var elems = document.querySelectorAll(".sidenav");
     var instances = M.Sidenav.init(elems);
-  });
+});

@@ -37,6 +37,7 @@ body {
 }
 /*form*/
 #address-form {
+<<<<<<< HEAD
     margin-top: 300px;
 }
 
@@ -47,15 +48,29 @@ body {
 /* Form box */
 /*#address-form {
     display: block;
+=======
+    display: flex;
+    position: relative;
+    bottom: 300px;
+    left: 450px;
+>>>>>>> main
     align-items: right;
     justify-content: right;
-    border: 3px solid black;
     padding: 40px;
-    background-color: whitesmoke;
+    opacity: 0.75;
     margin: 340px 280px;
 }
+
+#distance {
+    display: flex;
+    position: relative;
+    top: 120px;
+    right: 220px;
+}
+
 input[type=text], #distance, #submitbtn {
     font-size: 20px;
+    margin: 5px; 
 }
 
 #submitbtn {
@@ -102,5 +117,9 @@ a:hover {
     align-items: center;
     justify-content: center;
 
+<<<<<<< HEAD
 }
 */
+=======
+}
+>>>>>>> main
