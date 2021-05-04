@@ -1,7 +1,9 @@
 var formEl = document.querySelector("#address-form");
-var inputEl = document.querySelector("#address");
+var inputEl = document.querySelector("#search");
 var selectEl = document.querySelector("#distance");
-var breweryContainer = document.querySelector("#breweries");
+var breweryContainer = document.querySelector("#brewery-class");
+var breweryRow = document.querySelector('#brewery-row');
+var breweryClass = document.querySelector('#brewery-class');
 
 var fetchZipData = function (zip, distance) {
     var fetchUrl =
@@ -31,35 +33,39 @@ var fetchApiData = function (zip) {
 var formSubmit = function (event) {
     event.preventDefault();
     breweryContainer.textContent = "";
-    fetchZipData(document.querySelector("#address").value, document.querySelector("#distance").value);
+    fetchZipData(document.querySelector("#search").value, document.querySelector("#distance").value);
 };
 
 var createCard = function (breweries) {
     for (var i = 0; i < breweries.length; i++) {
         var breweryCard = document.createElement("div");
-        breweryCard.className = "brewery-card";
-        var breweryName = document.createElement("h3");
+        breweryCard.className = "brewery-card card hoverable";
+        var breweryName = document.createElement("span");
         breweryName.textContent = breweries[i].name;
-        breweryName.className = "brewery-name";
+        breweryName.className = "brewery-name card-title";
         var breweryAddress = document.createElement("p");
         breweryAddress.className = "brewery-address";
         breweryAddress.textContent = breweries[i].street;
         var breweryType = document.createElement("p");
         breweryType.textContent = breweries[i].brewery_type;
         breweryType.className = "brewery-type";
-        var breweryBtn = document.createElement("button");
-        breweryBtn.className = "addToFavBtn";
-        breweryBtn.textContent = "Favorite";
+        var breweryBtn = document.createElement("a");
+        breweryBtn.className = "addToFavBtn btn-floating halfway-fab waves-effect waves-light red";
+        var starFav = document.createElement("i");
+        starFav.className = "material-icons";
+        starFav.textContent = "star_border";
 
 
         breweryCard.appendChild(breweryName);
         breweryCard.appendChild(breweryAddress);
         breweryCard.appendChild(breweryType);
         breweryCard.appendChild(breweryBtn);
+        breweryBtn.appendChild(starFav);
 
         //Some breweries have no address data, so we check for it before appending anything
         if (breweries[i].street) {
             breweryContainer.appendChild(breweryCard);
+            
         }
     }
     //Save to local storage
@@ -93,7 +99,7 @@ formEl.addEventListener("submit", formSubmit);
 
 /* Navbar */
 
-document.addEventListener("DOMContentLoaded", function () {
-    var elems = document.querySelectorAll(".sidenav");
-    var instances = M.Sidenav.init(elems);
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//     var elems = document.querySelectorAll(".sidenav");
+//     var instances = M.Sidenav.init(elems);
+// });
