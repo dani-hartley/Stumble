@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,25 +11,19 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
-        <!--Navbar-->
+        <!--sidebar-->
 
-  <!-- Dropdown Structure -->
-  <ul id='dropdown1' class='dropdown-content'>
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
-    <li class="divider" tabindex="-1"></li>
-    <li><a href="#!">three</a></li>
-    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-  </ul>
-          
-        
+        <ul id="slide-out" class="sidenav">
+            <li>Favorites</li>
+        </ul>
+        <a href="#" data-target="slide-out" class="sidenav-trigger" id="sidenavmenu"><i class="material-icons">star</i>Favorites</a>
+
         <!--hero/jumbotron -->
 
             <div class="row">
                 <section class="hero">
-                    <h1 class="col s7 m12">Stumble</h1>
-                    <div class="col s5 m4"> 
+                    <h1 class="col s7">Stumble</h1>
+                    <div id="search-form" class="col s5"> 
                         <div class="card amber lighten-4">
                             <form id="address-form">
                                 <input type="text" id="search" name="zipcode" placeholder="  Enter Zipcode" />
@@ -110,72 +105,8 @@
         </div>
 
 
-<!--      
-  <div id="breweries" class="container row">
-            <div class="card-content brewery-card col s2">
-                <div class="flex-image">
-                    <img src="./assets/css/Images/placeholder.png" alt="placeholder">
-                </div>
-                <div class="brewery-name"><a href="example.org">Brewery Name Here</a></div>
-                <div class="distance-text"># miles away</div> 
-                <div class="search-info">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque magni ut quae sapiente deleniti modi cum voluptatum, aliquid sit a repellendus similique unde dolor atque accusamus repudiandae minus veniam maiores!
-                </div>
-            </div>
-            <div class="card-content brewery-card col s2">
-                <div class="flex-image">
-                    <img src="./assets/css/Images/placeholder.png" alt="placeholder">
-                </div>
-                <div class="card-content brewery-card col s4">
-                    <a href="example.org">Brewery Name Here</a>
-                </div>
-                <div class="distance-text"># miles away</div> 
-                <div class="search-info">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque magni ut quae sapiente deleniti modi cum voluptatum, aliquid sit a repellendus similique unde dolor atque accusamus repudiandae minus veniam maiores!
-                </div>
-            </div>
-            <div class="card-content brewery-card col s2">
-                <div class="flex-image">
-                    <img src="./assets/css/Images/placeholder.png" alt="placeholder">
-                </div>
-                <div class="brewery-name">
-                    <a href="example.org">Brewery Name Here</a>
-                </div>
-                <div class="distance-text"># miles away</div> 
-                <div class="search-info">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque magni ut quae sapiente deleniti modi cum voluptatum, aliquid sit a repellendus similique unde dolor atque accusamus repudiandae minus veniam maiores!
-                </div>
-            </div>
-            <div class="card-content brewery-card col s2">
-                <div class="flex-image">
-                    <img src="./assets/css/Images/placeholder.png" alt="placeholder">
-                </div>
-                
-                <div class="card-content brewery-card col s2">
-                    <a href="example.org">Brewery Name Here</a>
-                </div>
-                <div class="distance-text"># miles away</div> 
-                <div class="flex-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque magni ut quae sapiente deleniti modi cum voluptatum, aliquid sit a repellendus similique unde dolor atque accusamus repudiandae minus veniam maiores!
-                </div>
-            </div>
-            <div class="card-content brewery-card col s2">
-                <div class="flex-image">
-                    <img src="./assets/css/Images/placeholder.png" alt="placeholder">
-                </div>
-                <div class="brewery-name">
-                    <a href="example.org">Brewery Name Here</a>
-                </div>
-                <div class="distance-text"># miles away</div> 
-                <div  class="search-info">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque magni ut quae sapiente deleniti modi cum voluptatum, aliquid sit a repellendus similique unde dolor atque accusamus repudiandae minus veniam maiores!
-                </div>
-            </div>
-            <div id="favorites" class="col s2">
-                <h4>Favorites</h4>
-            </div>    
-        </div>
-    -->
+
         <script src="./assets/js/script.js"></script>
+        
     </body>
 </html>

@@ -35,6 +35,10 @@ body {
     top: 350px;
 
 }
+/*form*/
+#address-form {
+    margin-top: 300px;
+}
 
 ::placeholder {
     color: red;
