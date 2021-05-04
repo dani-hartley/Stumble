@@ -17,7 +17,7 @@ body {
 }
 
 .hero {
-    height: 500px;
+    height: 520px;
     width: 100%;
     background-image: url("./Images/brewery.jpg");
     background-size: cover;
@@ -33,14 +33,19 @@ body {
     font-size: 120px;
     position: relative;
     top: 350px;
-
 }
-/* Form box */
+/*form*/
 #address-form {
-    display: flex;
-    position: relative;
-    bottom: 300px;
-    left: 450px;
+    margin-top: 300px;
+}
+
+::placeholder {
+    color: red;
+}
+
+/* Form box */
+/*#address-form {
+    display: block;
     align-items: right;
     justify-content: right;
     padding: 40px;
@@ -68,9 +73,10 @@ input[type=text], #distance, #submitbtn {
     text-align: center;
     display: inline-block;
 }
+*/
 
 /*Brewery cards search results*/
-
+/*
 #breweries {
     display: flex;
     flex-direction: row;
@@ -104,3 +110,4 @@ a:hover {
     justify-content: center;
 
 }
+*/
