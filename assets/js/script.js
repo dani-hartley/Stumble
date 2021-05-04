@@ -49,17 +49,44 @@ var createCard = function (breweries) {
         var breweryType = document.createElement("p");
         breweryType.classList = "card-content";
         breweryType.textContent = breweries[i].brewery_type;
+        breweryType.className = "brewery-type";
+        var breweryBtn = document.createElement("button");
+        breweryBtn.className = "addToFavBtn";
+        breweryBtn.textContent = "Favorite";
 
         breweryCard.appendChild(breweryName);
         breweryCard.appendChild(favButton);
         breweryCard.appendChild(breweryAddress);
         breweryCard.appendChild(breweryType);
+        breweryCard.appendChild(breweryBtn);
 
         //Some breweries have no address data, so we check for it before appending anything
         if (breweries[i].street) {
             breweryContainer.appendChild(breweryCard);
         }
     }
+    //Save to local storage
+    $(".addToFavBtn").on("click", function () {
+        var savName = $(this).siblings(".brewery-name").text();
+        var savAddress = $(this).siblings(".brewery-address").text();
+        var savType = $(this).siblings(".brewery-type").text();
+        console.log(savName, savAddress, savType);
+        var favBrewery = {
+            name: savName,
+            address: savAddress,
+            type: savType,
+        };
+        var savFavs = localStorage.getItem("savFavs");
+        if (!savFavs) {
+            savFavs = [];
+        } else {
+            savFavs = JSON.parse(savFavs);
+        }
+
+        savFavs.push(favBrewery);
+        var newFav = JSON.stringify(savFavs);
+        localStorage.setItem("favorite", newFav);
+    });
 };
 
 formEl.addEventListener("submit", formSubmit);
