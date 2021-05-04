@@ -17,7 +17,7 @@ body {
 }
 
 .hero {
-    height: 500px;
+    height: 520px;
     width: 100%;
     background-image: url("./Images/brewery.jpg");
     background-size: cover;
@@ -35,6 +35,11 @@ body {
     top: 350px;
 
 }
+
+::placeholder {
+    color: red;
+}
+
 /* Form box */
 /*#address-form {
     display: block;
