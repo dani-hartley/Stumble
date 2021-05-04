@@ -4,6 +4,7 @@ var selectEl = document.querySelector("#distance");
 var breweryContainer = document.querySelector("#brewery-class");
 var breweryRow = document.querySelector('#brewery-row');
 var breweryClass = document.querySelector('#brewery-class');
+var favSide = document.getElementById("slide-out");
 
 var fetchZipData = function (zip, distance) {
     var fetchUrl =
@@ -70,6 +71,8 @@ var createCard = function (breweries) {
     }
     //Save to local storage
     $('.addToFavBtn').on('click', function () {
+        console.log((this).children[0].innerHTML);
+        (this).children[0].innerHTML = "star";
         var savName = $(this).siblings(".brewery-name").text();
         var savAddress = $(this).siblings(".brewery-address").text();
         var savType = $(this).siblings(".brewery-type").text();
@@ -89,8 +92,25 @@ var createCard = function (breweries) {
         savFavs.push(favBrewery);
         var newFav = JSON.stringify(savFavs);
         localStorage.setItem("favorite", newFav);
+        favDisplay();
     })
 
+};
+
+function favDisplay() {
+    var savFav = localStorage.getItem('savFavs');
+    savFav = JSON.parse(savFav);
+    
+    //Display Local Storage
+    if (savFav !== null) {
+        for (var i=0; i < savFav.length; i++) {
+            var createLi = document.createElement("li");
+            createLi.innerText = savFav[i].name + ": " + 
+            savFav[i].address + "(" + 
+            savFav[i].type + ")";
+            favSide.appendChild(createLi);
+        }
+    }
 };
 
 
@@ -99,7 +119,9 @@ formEl.addEventListener("submit", formSubmit);
 
 /* Navbar */
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     var elems = document.querySelectorAll(".sidenav");
-//     var instances = M.Sidenav.init(elems);
-// });
+document.addEventListener("DOMContentLoaded", function () {
+    var elems = document.querySelectorAll(".sidenav");
+    var instances = M.Sidenav.init(elems);
+});
+
+
