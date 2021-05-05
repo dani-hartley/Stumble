@@ -14,15 +14,18 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     </head>
     <body>
+        <!-- action button -->
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large red sidenav-trigger" data-target="slide-out">
+                <i class="large material-icons">star</i>
+            </a>
+        </div>
+
         <!--sidebar-->
-
-        <a href="#" data-target="slide-out" class="sidenav-trigger right btn">
-            Favorites <i class="material-icons">star</i>
-        </a>
-
         <ul id="slide-out" class="sidenav">
-            <li>Favorites</li>
+            <h2 class="center-align">Favorites</h2>
         </ul>
+
         <nav>
             <h1 class="brand-logo">Stumble</h1>
         </nav>
@@ -31,67 +34,38 @@
             <div class="container">
                 <div class="row">
                     <div class="col l3 s1"></div>
-                    <form class="card grey lighten-4 col l6 s10">
-                        <p class="col l12 black-text">Stumble around your area! Enter your zip code: </p>
-                        <input type="text" name="zipcode" id="search" class="black-text" placeholder="Enter Zip Code">
+                    <form class="card grey lighten-4 col l6 s10" id="address-form">
+                        <p class="col l12 black-text">Stumble around your area! Enter your zip code:</p>
+                        <input type="text" name="zipcode" id="search" class="black-text" placeholder="Enter Zip Code" />
                         <div class="row">
                             <div class="col l1"></div>
-                            <select class="browser-default col l4 s12 grey lighten-3 N/A">
-                                <option value="" disabled selected>Choose your option</option>
+                            <select class="browser-default col l4 s12 grey lighten-3 N/A" id="distance">
+                                <option value="" disabled selected>Distance</option>
                                 <option value="25">25 miles</option>
                                 <option value="35">35 miles</option>
                                 <option value="45">45 miles</option>
                                 <option value="55">55 miles</option>
                             </select>
                             <div class="col l6 s12">
-                                <div class="col l2 "></div>
-                                <button type="submit" class="btn waves-effect waves-light red lighten-2 col l8 s12">Submit</button>
+                                <div class="col l2"></div>
+                                <button
+                                    type="submit"
+                                    class="btn waves-effect waves-light red lighten-2 col l8 s12"
+                                    id="submitbtn"
+                                >
+                                    Submit
+                                </button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
         </section>
-            
-            <!--hero/jumbotron -->
-            <!-- <div class="row valign-wrapper" id="hero">
-                <div class="col s3"></div>
-                <div id="search-form" class="col s6">
-                    <div class="card amber lighten-4">
-                        <form id="address-form" class="container">
-                            <input type="text" id="search" name="zipcode" placeholder="Enter Zipcode" class="row" />
-                            <div class="row">
-                                <select id="distance" class="browser-default N/A transparent col s6 center-align">
-                                <option value="" disabled selected>Distance</option>
-                                <option value="25">25 Miles</option>
-                                <option value="35">35 Miles</option>
-                                <option value="45">45 Miles</option>
-                                <option value="55">55 Miles</option>
-                            </select>
-                            <button
-                                type="submit"
-                                id="submitbtn"
-                                class="waves-effect waves-light btn deep-orange accent-4 col s4"
-                            >
-                                Submit
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div> -->
 
-<<<<<<< HEAD
         <!--Containers for Return values-->
         <div class="containter">
-            <div class="row" id="breweries">
+            <div class="row" id="brewery-class">
                 <div class="card hoverable col s12 m4 l2">
-=======
-    <div id="breweries" class="containter">
-        <div id="brewery-row" class="row">
-            <div id="brewery-class" class="col s2 m2">
-                <div class="card hoverable">
->>>>>>> 12264fe8de7bf7e76e0f688d73dc66f035908e87
                     <span class="card-title">Card Title</span>
                     <a class="btn-floating halfway-fab waves-effect waves-light red">
                         <i class="material-icons">star_border</i>
@@ -103,98 +77,10 @@
                         </p>
                     </div>
                 </div>
-<<<<<<< HEAD
-
-                <div class="col s2 m2">
-                    <div class="card hoverable">
-                        <span class="card-title">Card Title</span>
-                        <a class="btn-floating halfway-fab waves-effect waves-light red">
-                            <i class="material-icons">star_border</i>
-                        </a>
-                        <div class="card-content brewery-card">
-                            <p>
-                                I am a very simple card. I am good at containing small bits of information. I am
-                                convenient because I require little markup to use effectively.
-                            </p>
-                        </div>
-=======
             </div>
-            <!-- <div class="col s2 m2">
-                <div class="card hoverable">
-                    <span class="card-title">Card Title</span>
-                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                            class="material-icons">star_border</i></a>
-                    <div class="card-content brewery-card">
-                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient
-                            because I require little markup to use effectively.</p>
->>>>>>> 12264fe8de7bf7e76e0f688d73dc66f035908e87
-                    </div>
-                </div>
-                <div class="col s2 m2">
-                    <div class="card hoverable">
-                        <span class="card-title">Card Title</span>
-                        <a class="btn-floating halfway-fab waves-effect waves-light red"
-                            ><i class="material-icons">star_border</i></a
-                        >
-                        <div class="card-content brewery-card">
-                            <p>
-                                I am a very simple card. I am good at containing small bits of information. I am
-                                convenient because I require little markup to use effectively.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s2 m2">
-                    <div class="card hoverable">
-                        <span class="card-title">Card Title</span>
-                        <a class="btn-floating halfway-fab waves-effect waves-light red"
-                            ><i class="material-icons">star_border</i></a
-                        >
-                        <div class="card-content brewery-card">
-                            <p>
-                                I am a very simple card. I am good at containing small bits of information. I am
-                                convenient because I require little markup to use effectively.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s2 m2">
-                    <div class="card hoverable">
-                        <span class="card-title">Card Title</span>
-                        <a class="btn-floating halfway-fab waves-effect waves-light red"
-                            ><i class="material-icons">star_border</i></a
-                        >
-                        <div class="card-content brewery-card">
-                            <p>
-                                I am a very simple card. I am good at containing small bits of information. I am
-                                convenient because I require little markup to use effectively.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s2 m2">
-                    <div class="card hoverable">
-                        <span class="card-title">Card Title</span>
-                        <a class="btn-floating halfway-fab waves-effect waves-light red"
-                            ><i class="material-icons">star_border</i></a
-                        >
-                        <div class="card-content brewery-card">
-                            <p>
-                                I am a very simple card. I am good at containing small bits of information. I am
-                                convenient because I require little markup to use effectively.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
-    </div>
-    </div>
 
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-
-</body>
-
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="./assets/js/script.js"></script>
+    </body>
 </html>
