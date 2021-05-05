@@ -76,9 +76,9 @@ var createCard = function (breweries) {
         }
     };
     //Save to local storage
-    $('.addToFavBtn').on('click', function () {
+    $(".addToFavBtn").on("click", function () {
         // console.log((this).children[0].innerHTML);
-        (this).children[0].innerHTML = "star";
+        this.children[0].innerHTML = "star";
         var savName = $(this).siblings(".brewery-name").text();
         var savAddress = $(this).siblings(".brewery-address").text();
         var savType = $(this).siblings(".brewery-type").text();
@@ -86,13 +86,13 @@ var createCard = function (breweries) {
         var favBrewery = {
             name: savName,
             address: savAddress,
-            type: savType
-        }
-        var savFavs = localStorage.getItem('savFavs');
+            type: savType,
+        };
+        var savFavs = localStorage.getItem("savFavs");
         if (savFavs === null) {
             savFavs = [];
         } else {
-            savFavs = JSON.parse(savFavs);  
+            savFavs = JSON.parse(savFavs);
         }
         savFavs.push(favBrewery);
         console.log(savFavs);
@@ -100,27 +100,22 @@ var createCard = function (breweries) {
         localStorage.setItem("savFavs", newFav);
         console.log(newFav);
         favDisplay();
-    })
-
+    });
 };
 
 function favDisplay() {
-    var savFavs = localStorage.getItem('savFavs');
+    var savFavs = localStorage.getItem("savFavs");
     savFavs = JSON.parse(savFavs);
     //Display Local Storage
     if (savFavs !== null) {
-        for (var i=0; i < savFavs.length; i++) {
+        for (var i = 0; i < savFavs.length; i++) {
             var createLi = document.createElement("li");
-            createLi.innerText = savFavs[i].name + ": " + 
-            savFavs[i].address + "(" + 
-            savFavs[i].type + ")";
-            
+            createLi.innerText = savFavs[i].name + ": " + savFavs[i].address + "(" + savFavs[i].type + ")";
+
             favSide.appendChild(createLi);
         }
     }
-};
-
-
+}
 
 formEl.addEventListener("submit", formSubmit);
 
@@ -130,5 +125,3 @@ document.addEventListener("DOMContentLoaded", function () {
     var elems = document.querySelectorAll(".sidenav");
     var instances = M.Sidenav.init(elems);
 });
-
-
