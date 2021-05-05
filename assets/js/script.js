@@ -4,7 +4,7 @@ var selectEl = document.querySelector("#distance");
 var breweryContainer = document.querySelector("#brewery-class");
 var breweryRow = document.querySelector('#brewery-row');
 var breweryClass = document.querySelector('#brewery-class');
-var favSide = document.getElementById("slide-out");
+var favSide = document.querySelector("#slide-out");
 
 var fetchZipData = function (zip, distance) {
     var fetchUrl =
@@ -71,43 +71,46 @@ var createCard = function (breweries) {
     }
     //Save to local storage
     $('.addToFavBtn').on('click', function () {
-        console.log((this).children[0].innerHTML);
+        // console.log((this).children[0].innerHTML);
         (this).children[0].innerHTML = "star";
         var savName = $(this).siblings(".brewery-name").text();
         var savAddress = $(this).siblings(".brewery-address").text();
         var savType = $(this).siblings(".brewery-type").text();
-        console.log(savName, savAddress, savType)
+        // console.log(savName, savAddress, savType);
         var favBrewery = {
             name: savName,
             address: savAddress,
             type: savType
-        };
+        }
         var savFavs = localStorage.getItem('savFavs');
-        if (!savFavs) {
+        if (savFavs === null) {
             savFavs = [];
         } else {
-            savFavs = JSON.parse(savFavs);
+            savFavs = JSON.parse(savFavs);  
         }
-
         savFavs.push(favBrewery);
+        console.log(savFavs);
         var newFav = JSON.stringify(savFavs);
-        localStorage.setItem("favorite", newFav);
+        localStorage.setItem("savFavs", newFav);
+        console.log(newFav);
         favDisplay();
     })
 
 };
 
 function favDisplay() {
-    var savFav = localStorage.getItem('savFavs');
-    savFav = JSON.parse(savFav);
+    var savFavs = localStorage.getItem('savFavs');
+    savFavs = JSON.parse(savFavs);
+    
     
     //Display Local Storage
-    if (savFav !== null) {
-        for (var i=0; i < savFav.length; i++) {
+    if (savFavs !== null) {
+        for (var i=0; i < savFavs.length; i++) {
             var createLi = document.createElement("li");
-            createLi.innerText = savFav[i].name + ": " + 
-            savFav[i].address + "(" + 
-            savFav[i].type + ")";
+            createLi.innerText = savFavs[i].name + ": " + 
+            savFavs[i].address + "(" + 
+            savFavs[i].type + ")";
+            
             favSide.appendChild(createLi);
         }
     }
