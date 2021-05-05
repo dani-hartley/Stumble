@@ -19,8 +19,9 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-nav p {
+nav h1 {
     margin: 0;
+    margin-top: 15px;
     margin-left: 20px;
 }
 
@@ -29,11 +30,12 @@ nav p {
 }
 
 #hero {
-    height: 450px;
+    height: 350px;
     width: 100%;
     background-image: url("./Images/brewery.jpg");
     background-size: cover;
     background-position: center;
+    padding-top: 100px;
 }
 
 /*form*/

@@ -24,18 +24,44 @@
             <li>Favorites</li>
         </ul>
         <nav>
-            <p class="brand-logo">Stumble</p>
+            <h1 class="brand-logo">Stumble</h1>
         </nav>
 
-        <!--hero/jumbotron -->
-        <div class="row valign-wrapper" id="hero">
-            <div class="col s3"></div>
-            <div id="search-form" class="col s6">
-                <div class="card amber lighten-4">
-                    <form id="address-form" class="container">
-                        <input type="text" id="search" name="zipcode" placeholder="Enter Zipcode" class="row" />
+        <section id="hero">
+            <div class="container">
+                <div class="row">
+                    <div class="col l3 s1"></div>
+                    <form class="card grey lighten-4 col l6 s10">
+                        <p class="col l12 black-text">Stumble around your area! Enter your zip code: </p>
+                        <input type="text" name="zipcode" id="search" class="black-text" placeholder="Enter Zip Code">
                         <div class="row">
-                            <select id="distance" class="browser-default N/A transparent col s6 center-align">
+                            <div class="col l1"></div>
+                            <select class="browser-default col l4 s12 grey lighten-3 N/A">
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="25">25 miles</option>
+                                <option value="35">35 miles</option>
+                                <option value="45">45 miles</option>
+                                <option value="55">55 miles</option>
+                            </select>
+                            <div class="col l6 s12">
+                                <div class="col l2 "></div>
+                                <button type="submit" class="btn waves-effect waves-light red lighten-2 col l8 s12">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+            
+            <!--hero/jumbotron -->
+            <!-- <div class="row valign-wrapper" id="hero">
+                <div class="col s3"></div>
+                <div id="search-form" class="col s6">
+                    <div class="card amber lighten-4">
+                        <form id="address-form" class="container">
+                            <input type="text" id="search" name="zipcode" placeholder="Enter Zipcode" class="row" />
+                            <div class="row">
+                                <select id="distance" class="browser-default N/A transparent col s6 center-align">
                                 <option value="" disabled selected>Distance</option>
                                 <option value="25">25 Miles</option>
                                 <option value="35">35 Miles</option>
@@ -53,12 +79,12 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!--Containers for Return values-->
         <div class="containter">
             <div class="row" id="breweries">
-                <div class="card hoverable col s2 m2">
+                <div class="card hoverable col s12 m4">
                     <span class="card-title">Card Title</span>
                     <a class="btn-floating halfway-fab waves-effect waves-light red">
                         <i class="material-icons">star_border</i>

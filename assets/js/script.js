@@ -40,7 +40,7 @@ var createCard = function (breweries) {
         breweryName.classList = "card-title";
         breweryName.textContent = breweries[i].name;
         var favButton = document.createElement("a");
-        favButton.classList = "btn-floating halfway-fab waves-effect waves-light red";
+        favButton.classList = "addToFavBtn btn-floating halfway-fab waves-effect waves-light red";
         favButton.innerHTML = '<i class="material-icons">star_border</i>';
 
         var breweryAddress = document.createElement("p");
@@ -50,15 +50,10 @@ var createCard = function (breweries) {
         breweryType.classList = "card-content";
         breweryType.textContent = breweries[i].brewery_type;
         breweryType.className = "brewery-type";
-        var breweryBtn = document.createElement("button");
-        breweryBtn.className = "addToFavBtn";
-        breweryBtn.textContent = "Favorite";
-
         breweryCard.appendChild(breweryName);
         breweryCard.appendChild(favButton);
         breweryCard.appendChild(breweryAddress);
         breweryCard.appendChild(breweryType);
-        breweryCard.appendChild(breweryBtn);
 
         //Some breweries have no address data, so we check for it before appending anything
         if (breweries[i].street) {
