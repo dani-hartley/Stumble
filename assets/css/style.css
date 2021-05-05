@@ -1,7 +1,7 @@
 :root {
     --primary-color: rgb(128, 66, 50);
     --secondary-color: #87e0e0;
-    --tertiary-color: #cbd4d4;
+    --tertiary-color: #ccc5ad;
     --quaternary-color: #353d3d;
 }
 
@@ -40,7 +40,7 @@ body {
 }
 
 ::placeholder {
-    color: red;
+    color: black;
 }
 
 /* Form box */

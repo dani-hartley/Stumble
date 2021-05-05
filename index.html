@@ -13,19 +13,13 @@
 </head>
 
 <body>
-    <!--sidebar-->
-
-    <ul id="slide-out" class="sidenav">Favorites</ul>
-    <a href="#" data-target="slide-out" class="sidenav-trigger" id="sidenavmenu"><i
-            class="material-icons">star</i>Favorites</a>
-
     <!--hero/jumbotron -->
 
     <div class="row">
         <section class="hero">
             <h1 class="col s7">Stumble</h1>
             <div id="search-form" class="col s5">
-                <div class="card amber lighten-4">
+                <div class="card brown lighten-2">
                     <form id="address-form">
                         <input type="text" id="search" name="zipcode" placeholder="  Enter Zipcode" />
                         <select id="distance" class="browser-default N/A transparent">
@@ -36,7 +30,7 @@
                             <option value="55miles">55 Miles</option>
                         </select>
                         <button type="submit" id="submitbtn"
-                            class="waves-effect waves-light btn deep-orange accent-4">Submit</button>
+                            class="waves-effect waves-light btn brown darken-4">Submit</button>
                     </form>
                 </div>
             </div>
@@ -44,14 +38,20 @@
         </section>
     </div>
 
+    <!--sidebar-->
+
+    <ul id="slide-out" class="sidenav">Favorites</ul>
+    <a href="#" data-target="slide-out" class="sidenav-trigger" id="sidenavmenu"><i
+            class="material-icons">star</i>Favorites</a>
+
     <!--Containers for Return values-->
 
     <div id="breweries" class="containter">
         <div id="brewery-row" class="row">
-            <div id="brewery-class" class="col s2 m2">
-                <div class="card hoverable">
+            <div class="col s2 m2">
+                <div class="card hoverable brown lighten-2">
                     <span class="card-title">Card Title</span>
-                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                    <a class="btn-floating halfway-fab waves-effect waves-light orange accent-1"><i
                             class="material-icons">star_border</i></a>
                     <div class="card-content brewery-card">
                         <p>I am a very simple card. I am good at containing small bits of information. I am convenient

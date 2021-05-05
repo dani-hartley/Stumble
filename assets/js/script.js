@@ -1,9 +1,9 @@
 var formEl = document.querySelector("#address-form");
 var inputEl = document.querySelector("#search");
 var selectEl = document.querySelector("#distance");
-var breweryContainer = document.querySelector("#brewery-class");
-var breweryRow = document.querySelector('#brewery-row');
-var breweryClass = document.querySelector('#brewery-class');
+var breweryContainer = document.querySelector("#brewery-row");
+// var breweryRow = document.querySelector('#brewery-row');
+// var breweryClass = document.querySelector('#brewery-class');
 var favSide = document.querySelector("#slide-out");
 
 var fetchZipData = function (zip, distance) {
@@ -39,16 +39,20 @@ var formSubmit = function (event) {
 
 var createCard = function (breweries) {
     for (var i = 0; i < breweries.length; i++) {
+        var breweryClass = document.createElement("div")
+        breweryClass.className = "col s2 m2";
         var breweryCard = document.createElement("div");
-        breweryCard.className = "brewery-card card hoverable";
+        breweryCard.className = "brewery-card card hoverable brown lighten-2";
         var breweryName = document.createElement("span");
         breweryName.textContent = breweries[i].name;
         breweryName.className = "brewery-name card-title";
         var breweryAddress = document.createElement("p");
-        breweryAddress.className = "brewery-address";
+        breweryAddress.className = "brewery-address card-content";
         breweryAddress.textContent = breweries[i].street;
         var breweryType = document.createElement("p");
-        breweryType.textContent = breweries[i].brewery_type;
+        var breweryTypeReturn = breweries[i].brewery_type;
+        var typeText = breweryTypeReturn.toUpperCase();
+        breweryType.textContent = "Brewery Type: " + typeText;
         breweryType.className = "brewery-type";
         var breweryBtn = document.createElement("a");
         breweryBtn.className = "addToFavBtn btn-floating halfway-fab waves-effect waves-light red";
@@ -57,18 +61,20 @@ var createCard = function (breweries) {
         starFav.textContent = "star_border";
 
 
+        breweryClass.appendChild(breweryCard);
         breweryCard.appendChild(breweryName);
         breweryCard.appendChild(breweryAddress);
-        breweryCard.appendChild(breweryType);
+        breweryAddress.appendChild(breweryType);
         breweryCard.appendChild(breweryBtn);
         breweryBtn.appendChild(starFav);
+        
 
         //Some breweries have no address data, so we check for it before appending anything
         if (breweries[i].street) {
-            breweryContainer.appendChild(breweryCard);
+            breweryContainer.appendChild(breweryClass);
             
         }
-    }
+    };
     //Save to local storage
     $('.addToFavBtn').on('click', function () {
         // console.log((this).children[0].innerHTML);
@@ -101,8 +107,6 @@ var createCard = function (breweries) {
 function favDisplay() {
     var savFavs = localStorage.getItem('savFavs');
     savFavs = JSON.parse(savFavs);
-    
-    
     //Display Local Storage
     if (savFavs !== null) {
         for (var i=0; i < savFavs.length; i++) {
