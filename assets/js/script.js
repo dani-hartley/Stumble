@@ -61,10 +61,6 @@ var createCard = function (breweries) {
         var starFav = document.createElement("i");
         starFav.className = "material-icons";
         starFav.textContent = "star_border";
-<<<<<<< HEAD
-=======
-
->>>>>>> 12264fe8de7bf7e76e0f688d73dc66f035908e87
 
         breweryCard.appendChild(breweryName);
         breweryCard.appendChild(breweryAddress);
@@ -122,11 +118,6 @@ function favDisplay() {
     }
 };
 
-
-            favSide.appendChild(createLi);
-        }
-    }
-}
 
 formEl.addEventListener("submit", formSubmit);
 
