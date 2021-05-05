@@ -2,9 +2,15 @@ var formEl = document.querySelector("#address-form");
 var inputEl = document.querySelector("#search");
 var selectEl = document.querySelector("#distance");
 var breweryContainer = document.querySelector("#brewery-class");
+<<<<<<< HEAD
 var breweryRow = document.querySelector("#brewery-row");
 var breweryClass = document.querySelector("#brewery-class");
 var favSide = document.querySelector("#slide-out");
+=======
+var breweryRow = document.querySelector('#brewery-row');
+var breweryClass = document.querySelector('#brewery-class');
+var favSide = document.getElementById("slide-out");
+>>>>>>> 12264fe8de7bf7e76e0f688d73dc66f035908e87
 
 var fetchZipData = function (zip, distance) {
     var fetchUrl =
@@ -55,6 +61,10 @@ var createCard = function (breweries) {
         var starFav = document.createElement("i");
         starFav.className = "material-icons";
         starFav.textContent = "star_border";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 12264fe8de7bf7e76e0f688d73dc66f035908e87
 
         breweryCard.appendChild(breweryName);
         breweryCard.appendChild(breweryAddress);
@@ -65,20 +75,53 @@ var createCard = function (breweries) {
         //Some breweries have no address data, so we check for it before appending anything
         if (breweries[i].street) {
             breweryContainer.appendChild(breweryCard);
+            
         }
     }
     //Save to local storage
+    $('.addToFavBtn').on('click', function () {
+        console.log((this).children[0].innerHTML);
+        (this).children[0].innerHTML = "star";
+        var savName = $(this).siblings(".brewery-name").text();
+        var savAddress = $(this).siblings(".brewery-address").text();
+        var savType = $(this).siblings(".brewery-type").text();
+        console.log(savName, savAddress, savType)
+        var favBrewery = {
+            name: savName,
+            address: savAddress,
+            type: savType
+        };
+        var savFavs = localStorage.getItem('savFavs');
+        if (!savFavs) {
+            savFavs = [];
+        } else {
+            savFavs = JSON.parse(savFavs);
+        }
+
+        savFavs.push(favBrewery);
+        var newFav = JSON.stringify(savFavs);
+        localStorage.setItem("favorite", newFav);
+        favDisplay();
+    })
+
 };
 
 function favDisplay() {
-    var savFavs = localStorage.getItem("savFavs");
-    savFavs = JSON.parse(savFavs);
-
+    var savFav = localStorage.getItem('savFavs');
+    savFav = JSON.parse(savFav);
+    
     //Display Local Storage
-    if (savFavs !== null) {
-        for (var i = 0; i < savFavs.length; i++) {
+    if (savFav !== null) {
+        for (var i=0; i < savFav.length; i++) {
             var createLi = document.createElement("li");
-            createLi.innerText = savFavs[i].name + ": " + savFavs[i].address + "(" + savFavs[i].type + ")";
+            createLi.innerText = savFav[i].name + ": " + 
+            savFav[i].address + "(" + 
+            savFav[i].type + ")";
+            favSide.appendChild(createLi);
+        }
+    }
+};
+
 
             favSide.appendChild(createLi);
         }
@@ -119,3 +162,5 @@ document.addEventListener("DOMContentLoaded", function () {
     var elems = document.querySelectorAll(".sidenav");
     var instances = M.Sidenav.init(elems);
 });
+
+
