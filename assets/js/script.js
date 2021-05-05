@@ -6,7 +6,7 @@ var breweryRow = document.querySelector("#brewery-row");
 // var breweryClass = document.querySelector("#brewery-class");
 var favSide = document.querySelector("#slide-out");
 var clear = document.querySelector("#clearAll");
-var favBrew =document.querySelector("#fav-brewery");
+var favBrew = document.querySelector("#fav-brewery");
 
 var fetchZipData = function (zip, distance) {
     var fetchUrl =
@@ -30,12 +30,17 @@ var fetchZipData = function (zip, distance) {
 
 var fetchApiData = function (zip) {
     var apiUrl = "https://api.openbrewerydb.org/breweries?by_postal=" + zip;
-    console.log('how many tiems does fetchApiData get called?');
+    // console.log('how many tiems does fetchApiData get called?');
     fetch(apiUrl)
         .then((response) => response.json())
-        .then((data) => createCard(data));
+        .then((data) => {
+            if (data.length > 0) {
+                console.info('data: ', data);
+                createCard(data) //Created if to only run createCard if it had a zip
+            }
+        });
 };
-//createCard is being run everytime causing the local Storage on click to run
+
 
 var formSubmit = function (event) {
     event.preventDefault();
@@ -51,7 +56,10 @@ var formSubmit = function (event) {
 // })
 
 var createCard = function (breweries) {
-    // console.log('how many times does line 50 run')
+    console.info('breweries: ', breweries);
+    var postalCode = breweries[0].postal_code.split('-');
+    var zipCodeId = postalCode[0];
+    var zipClass = `brewery-zip-${zipCodeId}`;
     for (var i = 0; i < breweries.length; i++) {
         var breweryClass = document.createElement("div")
         breweryClass.className = "col s2 m2";
@@ -69,7 +77,7 @@ var createCard = function (breweries) {
         breweryType.textContent = "Brewery Type: " + typeText;
         breweryType.className = "brewery-type";
         var breweryBtn = document.createElement("a");
-        breweryBtn.className = "addToFavBtn btn-floating halfway-fab waves-effect waves-light red";
+        breweryBtn.className = `addToFavBtn btn-floating halfway-fab waves-effect waves-light red ${zipClass}`;
         var starFav = document.createElement("i");
         starFav.className = "material-icons";
         starFav.textContent = "star_border";
@@ -88,7 +96,7 @@ var createCard = function (breweries) {
     }
     // Save to local storage
     // console.log('how many times does this line run 86')
-    $(".addToFavBtn").on("click", function () {
+    $(`.${zipClass}`).on("click", function () {
         // console.log('what is this: ', this)
         // console.log('How many times')
         // console.log((this).children[0].innerHTML);
