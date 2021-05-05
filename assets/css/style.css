@@ -1,7 +1,7 @@
 :root {
     --primary-color: rgb(128, 66, 50);
     --secondary-color: #87e0e0;
-    --tertiary-color: #ccc5ad;
+    --tertiary-color: #fcf1dd;
     --quaternary-color: #353d3d;
 }
 
@@ -36,4 +36,12 @@ nav h1 {
     background-size: cover;
     background-position: center;
     padding-top: 100px;
+}
+
+.favorites {
+    font-size: 15px;
+}
+
+#clearAll {
+    font-size: 15px;
 }
