@@ -110,32 +110,6 @@ function favDisplay() {
 
 formEl.addEventListener("submit", formSubmit);
 
-$(".addToFavBtn").on("click", function () {
-    // console.log((this).children[0].innerHTML);
-    this.children[0].innerHTML = "star";
-    var savName = $(this).siblings(".brewery-name").text();
-    var savAddress = $(this).siblings(".brewery-address").text();
-    var savType = $(this).siblings(".brewery-type").text();
-    // console.log(savName, savAddress, savType);
-    var favBrewery = {
-        name: savName,
-        address: savAddress,
-        type: savType,
-    };
-    var savFavs = localStorage.getItem("savFavs");
-    if (savFavs === null) {
-        savFavs = [];
-    } else {
-        savFavs = JSON.parse(savFavs);
-    }
-    savFavs.push(favBrewery);
-    console.log(savFavs);
-    var newFav = JSON.stringify(savFavs);
-    localStorage.setItem("savFavs", newFav);
-    console.log(newFav);
-    favDisplay();
-});
-
 /* Navbar */
 
 document.addEventListener("DOMContentLoaded", function () {
