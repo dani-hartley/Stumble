@@ -1,7 +1,7 @@
 var formEl = document.querySelector("#address-form");
 var inputEl = document.querySelector("#search");
 var selectEl = document.querySelector("#distance");
-// var breweryContainer = document.querySelector("#brewery-class");
+var breweryContainer = document.querySelector("#brewery-container");
 var breweryRow = document.querySelector("#brewery-row");
 // var breweryClass = document.querySelector("#brewery-class");
 var favSide = document.querySelector("#slide-out");
@@ -44,7 +44,7 @@ var fetchApiData = function (zip) {
 
 var formSubmit = function (event) {
     event.preventDefault();
-    breweryRow.textContent = "";
+    breweryContainer.textContent = "";
     fetchZipData(document.querySelector("#search").value, document.querySelector("#distance").value);
 };
 
@@ -88,10 +88,12 @@ var createCard = function (breweries) {
         breweryCard.appendChild(breweryType);
         breweryCard.appendChild(breweryBtn);
         breweryBtn.appendChild(starFav);
+        breweryRow.appendChild(breweryClass);
 
         //Some breweries have no address data, so we check for it before appending anything
         if (breweries[i].street) {
-            breweryRow.appendChild(breweryClass);
+            
+            breweryContainer.appendChild(breweryRow);
         }
     }
     // Save to local storage
