@@ -19,16 +19,6 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-nav h1 {
-    margin: 0;
-    margin-top: 15px;
-    margin-left: 20px;
-}
-
-.btn {
-    background-color: darkturquoise;
-}
-
 #hero {
     height: 350px;
     width: 100%;
@@ -38,10 +28,31 @@ nav h1 {
     padding-top: 100px;
 }
 
-.favorites {
+#clearAll {
     font-size: 15px;
 }
 
-#clearAll {
-    font-size: 15px;
+.container {
+    width: 90%;
+}
+
+.card {
+    padding: 5px 10px;
+}
+
+.card-title {
+    font-size: 21px;
+}
+
+nav {
+    padding-left: 10px;
+}
+
+.sidenav li {
+    padding: 5px 10px;
+}
+@media screen and (max-width: 600px) {
+    .card.small {
+        height: 200px;
+    }
 }
