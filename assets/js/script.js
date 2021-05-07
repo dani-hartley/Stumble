@@ -101,6 +101,8 @@ var createCard = function (breweries) {
 };
 
 function favoritesDisplay() {
+    $("li[id=fav-brewery").remove();
+    $("div[class=divider").remove();
     var saveFavorites = localStorage.getItem("saveFavorites");
     saveFavorites = JSON.parse(saveFavorites);
 

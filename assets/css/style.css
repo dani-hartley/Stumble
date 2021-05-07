@@ -56,3 +56,8 @@ nav {
         height: 200px;
     }
 }
+@media screen and (max-width: 600px) {
+    .card.small {
+        height: 200px;
+    }
+}
