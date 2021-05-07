@@ -1,83 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stumble</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Stumble</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    </head>
 
-<body>
-    <!-- action button -->
-    <div class="fixed-action-btn">
-        <a class="btn-floating btn-large red sidenav-trigger" data-target="slide-out">
-            <i class="large material-icons">star</i>
-        </a>
-    </div>
+    <body>
+        <!-- action button -->
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large red sidenav-trigger" data-target="slide-out">
+                <i class="large material-icons">star</i>
+            </a>
+        </div>
 
-    <!--sidebar-->
-    <ul id="slide-out" class="sidenav">
-        <h2 class="center-align">Favorites<button type="submit" id="clearAll">Clear All</button></h2>
-    </ul>
-
-    <nav class="brown lighten-3">
-        <h1 class="brand-logo">Stumble</h1>
-    </nav>
-
-    <section id="hero">
-        <div class="container">
+        <!--sidebar-->
+        <ul id="slide-out" class="sidenav">
             <div class="row">
-                <div class="col l3 s1"></div>
-                <form class="card grey lighten-4 col l6 s10" id="address-form">
-                    <p class="col l12 black-text">Stumble around your area! Enter your zip code:</p>
-                    <input type="text" name="zipcode" id="search" class="black-text" placeholder="Enter Zip Code" />
-                    <div class="row">
-                        <div class="col l1"></div>
-                        <select class="browser-default col l4 s12 grey lighten-3 N/A" id="distance">
-                            <option value="" disabled selected>Distance</option>
-                            <option value="25">25 miles</option>
-                            <option value="35">35 miles</option>
-                            <option value="45">45 miles</option>
-                            <option value="55">55 miles</option>
-                        </select>
-                        <div class="col l6 s12">
-                            <div class="col l2"></div>
-                            <button type="submit" class="btn waves-effect waves-light red darken-2 col l8 s12"
-                                id="submitbtn">
-                                Submit
-                            </button>
-                        </div>
-                    </div>
-                </form>
+                <h2 class="center-align col s12">Favorites</h2>
+                <button
+                    type="submit"
+                    id="clearAll"
+                    class="col s8 offset-s2 l6 offset-l3 btn red darken-2 waves-effect waves-light"
+                >
+                    Clear All
+                </button>
             </div>
-        </div>
-    </section>
+        </ul>
 
-    <!--Containers for Return values-->
-    <div id="brewery-container" >
-        <div id="brewery-row" class="row">
-            <!-- <div class="card hoverable col s12 m4 l2">
-                <span class="card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light red">
-                    <i class="material-icons">star_border</i>
-                </a>
-                <div class="card-content">
-                    <p>
-                        I am a very simple card. I am good at containing small bits of information. I am convenient
-                        because I require little markup to use effectively.
-                    </p>
+        <!-- navbar -->
+        <nav class="brown lighten-3">
+            <span class="brand-logo">Stumble</span>
+        </nav>
+
+        <!-- hero -->
+        <section id="hero">
+            <div class="container">
+                <div class="row">
+                    <form class="card grey lighten-4 col l6 s10 offset-l3 offset-s1" id="address-form">
+                        <p class="col l12 black-text center-align">Stumble around your area! Enter your zip code:</p>
+                        <input type="text" name="zipcode" id="search" class="black-text" placeholder="Enter Zip Code" />
+                        <div class="row">
+                            <select
+                                class="browser-default col l4 s10 grey lighten-3 N/A offset-l1 offset-s1"
+                                id="distance"
+                            >
+                                <option value="" disabled selected>Distance</option>
+                                <option value="25">25 miles</option>
+                                <option value="35">35 miles</option>
+                                <option value="45">45 miles</option>
+                                <option value="55">55 miles</option>
+                            </select>
+                            <div class="col l4 s10 offset-l1 offset-s1">
+                                <button
+                                    type="submit"
+                                    class="btn waves-effect waves-light red darken-2 col l8 s12 offset-l4"
+                                    id="submitbtn"
+                                >
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </div> -->
+            </div>
+        </section>
+
+        <!-- main brewery container -->
+        <div id="brewery-container" class="container">
+            <div id="brewery-row" class="row"></div>
         </div>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-</body>
-
+        <!-- jquery and js scripts -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="./assets/js/script.js"></script>
+    </body>
 </html>
