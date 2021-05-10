@@ -41,7 +41,7 @@ body {
 }
 
 .card-title {
-    font-size: 21px;
+    font-size: 10px;
 }
 
 nav {
@@ -50,6 +50,11 @@ nav {
 
 .sidenav li {
     padding: 5px 10px;
+}
+@media screen and (max-width: 600px) {
+    .card.small {
+        height: 200px;
+    }
 }
 @media screen and (max-width: 600px) {
     .card.small {
