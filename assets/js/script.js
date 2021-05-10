@@ -48,10 +48,11 @@ var createCard = function (breweries) {
         breweryCard.className = "brewery-card card small hoverable brown lighten-4";
         var breweryName = document.createElement("span");
         breweryName.textContent = breweries[i].name;
-        breweryName.className = "brewery-name card-title";
+        breweryName.className = "brewery-name card-title ";
         var breweryAddress = document.createElement("p");
         breweryAddress.className = "brewery-address card-content";
         breweryAddress.textContent = breweries[i].street;
+        var breweryLinkContainer = document.createElement("div");
         var breweryType = document.createElement("p");
         var breweryTypeReturn = breweries[i].brewery_type;
         var typeText = breweryTypeReturn.toUpperCase();
@@ -136,7 +137,7 @@ clearButton.addEventListener("click", function clearFavs() {
     window.localStorage.clear();
     $("li[id=fav-brewery").remove();
     $("div[class=divider").remove();
-});
+    });
 
 // Navbar init
 
